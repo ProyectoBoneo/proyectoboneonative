@@ -1,6 +1,6 @@
 package boneo.com.proyectoboneoapp
 
-import android.os.Bundle
+import android.content.Intent
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -12,11 +12,11 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_navigation.*
 import kotlinx.android.synthetic.main.app_bar_navigation.*
 
-class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+open class BaseNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_navigation)
+    override fun setContentView(layoutResID: Int) {
+        super.setContentView(R.layout.activity_navigation)
+
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
@@ -30,6 +30,9 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        layoutInflater.inflate(layoutResID, findViewById(R.id.drawer_layout_content),
+                true)
     }
 
     override fun onBackPressed() {
@@ -50,9 +53,9 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            R.id.action_settings -> true
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -60,22 +63,24 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_noticias -> {
-                // Handle the camera action
+
             }
             R.id.nav_comunicados -> {
-
+                startActivity(Intent(this.applicationContext, ComunicadosActivity::class.java))
+                finish()
             }
             R.id.nav_perfil_academico -> {
-
+                startActivity(Intent(this.applicationContext, PerfilAcademicoActivity::class.java))
+                finish()
             }
             R.id.nav_configuracion -> {
 
             }
             R.id.nav_cerrar_sesion -> {
-
+                startActivity(Intent(this.applicationContext, LogoutActivity::class.java))
+                finish()
             }
         }
-
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }

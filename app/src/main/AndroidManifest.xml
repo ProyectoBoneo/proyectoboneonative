@@ -26,11 +26,22 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".NavigationActivity"
-            android:label="@string/title_activity_navigation"
+            android:name=".ComunicadosActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ComunicadosActivity" />
-        <activity android:name=".PerfilAcademicoActivity"></activity>
+        <activity
+            android:name=".PerfilAcademicoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LogoutActivity"
+            android:label="@string/title_activity_logout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BaseNavigationActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".NoticiasActivity"></activity>
     </application>
 
 </manifest>

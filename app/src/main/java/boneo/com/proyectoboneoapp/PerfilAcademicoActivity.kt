@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import boneo.com.proyectoboneoapp.rest.getBoneoService
 
-class PerfilAcademicoActivity : AppCompatActivity() {
+class PerfilAcademicoActivity : BaseNavigationActivity() {
     private var mAuthTask: RetrievePerfilAcademicoTask? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

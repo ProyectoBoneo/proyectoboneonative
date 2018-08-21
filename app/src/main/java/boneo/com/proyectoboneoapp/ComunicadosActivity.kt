@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import boneo.com.proyectoboneoapp.rest.getBoneoService
 
-class ComunicadosActivity : AppCompatActivity() {
+class ComunicadosActivity : BaseNavigationActivity() {
     private var mAuthTask: RetrieveComunicadosTask? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

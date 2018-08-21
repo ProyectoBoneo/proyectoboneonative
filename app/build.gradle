@@ -24,6 +24,21 @@ android {
             buildConfigField 'String', 'BASE_URL', '"http://proyectoboneo.com/api/"'
         }
     }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/auth',
+                            'src/main/res/layouts/comunicados',
+                            'src/main/res/layouts/home',
+                            'src/main/res/layouts/navigation',
+                            'src/main/res/layouts/noticias',
+                            'src/main/res/layouts/perfil_academico',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
 }
 
 dependencies {

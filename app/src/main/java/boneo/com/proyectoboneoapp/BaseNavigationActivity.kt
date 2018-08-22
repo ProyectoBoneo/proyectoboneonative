@@ -4,15 +4,21 @@ import android.content.Intent
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
+import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 
 import kotlinx.android.synthetic.main.activity_navigation.*
 import kotlinx.android.synthetic.main.app_bar_navigation.*
 
-open class BaseNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+open class BaseNavigationActivity : AppCompatActivity(),
+        NavigationView.OnNavigationItemSelectedListener,
+        DrawerLayout.DrawerListener {
+
+    var nextIntent : Intent? = null
 
     override fun setContentView(layoutResID: Int) {
         super.setContentView(R.layout.activity_navigation)
@@ -27,12 +33,19 @@ open class BaseNavigationActivity : AppCompatActivity(), NavigationView.OnNaviga
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
+        drawer_layout.addDrawerListener(this)
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
 
         layoutInflater.inflate(layoutResID, findViewById(R.id.drawer_layout_content),
                 true)
+
+        val selectedItemId = intent.getIntExtra("selectedItemId", 0)
+        if (selectedItemId != 0) {
+            findViewById<NavigationView>(R.id.nav_view).menu
+                    .findItem(selectedItemId).isChecked = true
+        }
     }
 
     override fun onBackPressed() {
@@ -60,28 +73,49 @@ open class BaseNavigationActivity : AppCompatActivity(), NavigationView.OnNaviga
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_noticias -> {
-
+                nextIntent = Intent(this.applicationContext, NoticiasActivity::class.java)
             }
             R.id.nav_comunicados -> {
-                startActivity(Intent(this.applicationContext, ComunicadosActivity::class.java))
-                finish()
+                nextIntent = Intent(this.applicationContext, ComunicadosActivity::class.java)
             }
             R.id.nav_perfil_academico -> {
-                startActivity(Intent(this.applicationContext, PerfilAcademicoActivity::class.java))
-                finish()
+                nextIntent = Intent(this.applicationContext, PerfilAcademicoActivity::class.java)
             }
             R.id.nav_configuracion -> {
 
             }
             R.id.nav_cerrar_sesion -> {
-                startActivity(Intent(this.applicationContext, LogoutActivity::class.java))
-                finish()
+                nextIntent = Intent(this.applicationContext, LogoutActivity::class.java)
             }
         }
+
+        if (nextIntent != null) {
+            nextIntent?.putExtra("selectedItemId", item.itemId)
+            drawer_layout.closeDrawer(GravityCompat.START)
+        }
+
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onDrawerStateChanged(newState: Int) {
+        // Ignore
+    }
+
+    override fun onDrawerSlide(drawerView: View?, slideOffset: Float) {
+        // Ignore
+    }
+
+    override fun onDrawerClosed(drawerView: View?) {
+        if (nextIntent != null) {
+            startActivity(nextIntent)
+            finish()
+        }
+    }
+
+    override fun onDrawerOpened(drawerView: View?) {
+        // Ignore
     }
 }

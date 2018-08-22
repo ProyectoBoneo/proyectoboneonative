@@ -19,4 +19,13 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_logout">LogoutActivity</string>
     <string name="token_storage_key">AUTH_TOKEN</string>
+
+    <string name="logout_confirm_text">¿Desea cerrar sesión?</string>
+    <string name="logout_confirm_button">Cerrar sesión</string>
+    <string name="noticias">Noticias</string>
+    <string name="perfil_academico">Perfil Académico</string>
+    <string name="comunicados">Comunicados</string>
+    <string name="mi_cuenta">Mi Cuenta</string>
+    <string name="configuracion">Configuración</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
 </resources>

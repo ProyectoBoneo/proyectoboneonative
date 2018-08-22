@@ -1,42 +1,20 @@
 package boneo.com.proyectoboneoapp
 
-import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import boneo.com.proyectoboneoapp.rest.getBoneoService
+import boneo.com.proyectoboneoapp.databinding.ActivityComunicadosBinding
+import boneo.com.proyectoboneoapp.viewmodels.ComunicadosViewModel
 
 class ComunicadosActivity : BaseNavigationActivity() {
-    private var mAuthTask: RetrieveComunicadosTask? = null
+
+    private val comunicadosViewModel: ComunicadosViewModel
+        get() = ViewModelProviders.of(this).get(ComunicadosViewModel::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comunicados)
-        mAuthTask = RetrieveComunicadosTask()
-        mAuthTask!!.execute(null as Void?)
-    }
-
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
-    inner class RetrieveComunicadosTask internal constructor() : AsyncTask<Void, Void, Boolean>() {
-
-        override fun doInBackground(vararg params: Void): Boolean? {
-            val response = getBoneoService().getComunicados().execute()
-            return if (response.isSuccessful) {
-                System.out.println(response.body()!![0])
-                true
-            } else {
-                false
-            }
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            System.out.print("Post execute")
-        }
-
-        override fun onCancelled() {
-            System.out.println("On Cancelled")
-        }
+        supportActionBar?.title = "Comunicados"
+        val binding = ActivityComunicadosBinding.bind(findViewById(R.id.activity_comunicados))
+        binding.comunicado = comunicadosViewModel.comunicados.value?.first?.get(0)
     }
 }

@@ -7,27 +7,27 @@
         <item
             android:id="@+id/nav_noticias"
             android:icon="@drawable/ic_rss_feed_black_24dp"
-            android:title="Noticias" />
+            android:title="@string/noticias" />
         <item
             android:id="@+id/nav_perfil_academico"
             android:icon="@drawable/ic_timeline_black_24dp"
-            android:title="Perfil Académico" />
+            android:title="@string/perfil_academico" />
         <item
             android:id="@+id/nav_comunicados"
             android:icon="@drawable/ic_email_black_24dp"
-            android:title="Comunicados" />
+            android:title="@string/comunicados" />
     </group>
 
-    <item android:title="Mi Cuenta">
+    <item android:title="@string/mi_cuenta">
         <menu>
             <item
                 android:id="@+id/nav_configuracion"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Configuración" />
+                android:title="@string/configuracion" />
             <item
                 android:id="@+id/nav_cerrar_sesion"
                 android:icon="@drawable/ic_lock_black_24dp"
-                android:title="Cerrar sesión" />
+                android:title="@string/cerrar_sesion" />
         </menu>
     </item>
 

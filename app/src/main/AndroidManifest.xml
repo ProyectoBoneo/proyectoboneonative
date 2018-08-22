@@ -27,21 +27,22 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name=".ComunicadosActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NavigationChild" />
         <activity
             android:name=".PerfilAcademicoActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NavigationChild" />
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NavigationChild" />
         <activity
             android:name=".LogoutActivity"
-            android:label="@string/title_activity_logout"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NavigationChild" />
+        <activity
+            android:name=".NoticiasActivity"
+            android:theme="@style/AppTheme.NavigationChild" />
         <activity
             android:name=".BaseNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NoticiasActivity"></activity>
     </application>
 
 </manifest>

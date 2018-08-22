@@ -1,9 +1,8 @@
 package boneo.com.proyectoboneoapp
 
 import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import boneo.com.proyectoboneoapp.rest.getBoneoService
+import boneo.com.proyectoboneoapp.clients.getBoneoService
 
 class PerfilAcademicoActivity : BaseNavigationActivity() {
     private var mAuthTask: RetrievePerfilAcademicoTask? = null
@@ -11,6 +10,7 @@ class PerfilAcademicoActivity : BaseNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comunicados)
+        supportActionBar?.title = "Perfil Académico"
         mAuthTask = RetrievePerfilAcademicoTask()
         mAuthTask!!.execute(null as Void?)
     }

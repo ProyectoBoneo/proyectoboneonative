@@ -1,8 +1,10 @@
-package boneo.com.proyectoboneoapp
+package boneo.com.proyectoboneoapp.activities.base
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import boneo.com.proyectoboneoapp.activities.home.HomeActivity
+import boneo.com.proyectoboneoapp.activities.auth.LoginActivity
 import boneo.com.proyectoboneoapp.model.AuthRepository
 
 class MainActivity : AppCompatActivity() {

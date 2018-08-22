@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.base.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,25 +23,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.auth.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".ComunicadosActivity"
+            android:name=".activities.comunicados.ComunicadosActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
-            android:name=".PerfilAcademicoActivity"
+            android:name=".activities.perfilacademico.PerfilAcademicoActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.home.HomeActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
-            android:name=".LogoutActivity"
+            android:name=".activities.auth.LogoutActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
-            android:name=".NoticiasActivity"
+            android:name=".activities.noticias.NoticiasActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
-            android:name=".BaseNavigationActivity"
+            android:name=".activities.base.BaseNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

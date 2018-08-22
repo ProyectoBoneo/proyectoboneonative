@@ -1,4 +1,4 @@
-package boneo.com.proyectoboneoapp
+package boneo.com.proyectoboneoapp.activities.base
 
 import android.content.Intent
 import android.support.design.widget.Snackbar
@@ -10,6 +10,11 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import boneo.com.proyectoboneoapp.activities.noticias.NoticiasActivity
+import boneo.com.proyectoboneoapp.activities.perfilacademico.PerfilAcademicoActivity
+import boneo.com.proyectoboneoapp.R
+import boneo.com.proyectoboneoapp.activities.auth.LogoutActivity
+import boneo.com.proyectoboneoapp.activities.comunicados.ComunicadosActivity
 
 import kotlinx.android.synthetic.main.activity_navigation.*
 import kotlinx.android.synthetic.main.app_bar_navigation.*

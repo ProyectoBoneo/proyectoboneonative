@@ -26,7 +26,7 @@ interface IBoneoService {
     @GET("comunicados/")
     fun getComunicados(): Call<List<DestinatarioComunicado>>
 
-    @GET("perfil_academico/")
+    @GET("/")
     fun getPerfilAcademico(): Call<List<PerfilAcademico>>
 }
 

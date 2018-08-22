@@ -1,4 +1,4 @@
-package boneo.com.proyectoboneoapp
+package boneo.com.proyectoboneoapp.activities.auth
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -9,6 +9,8 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import boneo.com.proyectoboneoapp.activities.home.HomeActivity
+import boneo.com.proyectoboneoapp.R
 import boneo.com.proyectoboneoapp.model.AuthRepository
 
 

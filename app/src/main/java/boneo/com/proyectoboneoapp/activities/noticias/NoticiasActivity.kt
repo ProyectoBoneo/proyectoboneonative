@@ -1,6 +1,8 @@
-package boneo.com.proyectoboneoapp
+package boneo.com.proyectoboneoapp.activities.noticias
 
 import android.os.Bundle
+import boneo.com.proyectoboneoapp.R
+import boneo.com.proyectoboneoapp.activities.base.BaseNavigationActivity
 
 class NoticiasActivity : BaseNavigationActivity() {
 

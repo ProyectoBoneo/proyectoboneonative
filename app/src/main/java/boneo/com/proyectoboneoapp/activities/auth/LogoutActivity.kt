@@ -1,7 +1,9 @@
-package boneo.com.proyectoboneoapp
+package boneo.com.proyectoboneoapp.activities.auth
 
 import android.content.Intent
 import android.os.Bundle
+import boneo.com.proyectoboneoapp.activities.base.BaseNavigationActivity
+import boneo.com.proyectoboneoapp.R
 import boneo.com.proyectoboneoapp.model.AuthRepository
 
 import kotlinx.android.synthetic.main.activity_logout.*

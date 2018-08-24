@@ -23,7 +23,7 @@ open class BaseNavigationActivity : AppCompatActivity(),
         NavigationView.OnNavigationItemSelectedListener,
         DrawerLayout.DrawerListener {
 
-    var nextIntent : Intent? = null
+    private var nextIntent : Intent? = null
 
     override fun setContentView(layoutResID: Int) {
         super.setContentView(R.layout.activity_navigation)

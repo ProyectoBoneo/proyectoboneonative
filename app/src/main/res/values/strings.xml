@@ -28,4 +28,16 @@
     <string name="mi_cuenta">Mi Cuenta</string>
     <string name="configuracion">Configuración</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, et pro everti quaeque elaboraret, sea ad numquam bonorum. No nulla appetere nam, mei nonumy feugiat pericula et. Ex probo docendi electram pri. Usu fugit veniam ut, duo saperet inciderint in. Mea ad viris accumsan accommodare.
+        Vim at tempor nominavi, libris nominavi eum te, vim sint etiam in. Ei quaeque nominati definitionem nam, duo doctus malorum definiebas eu. Nostrum corrumpit qui ei, pri etiam deleniti persecuti cu. Has eu paulo veniam utamur, sea delectus cotidieque ne.
+        Mea justo suscipiantur in, ea per conceptam inciderint. Cu pri tollit intellegat constituam, ei tibique nominavi sed. Semper ponderum eos cu. Eum alii quot ex. Et prima mucius assentior has, mel te quas simul incorrupte. Ea eos ignota mediocrem, mel te solum prompta ocurreret, has ut melius suscipit imperdiet.
+        Convenire reformidans eos id, amet nisl accusamus at quo. Et iracundia honestatis eum, cu option copiosae sit. Vis eu virtute erroribus. Vel legere blandit ut, veniam detracto per id.
+        Erat primis theophrastus vis ad, alii eirmod accusata te mel, ei postulant honestatis vim. In qui minim petentium, te nec viris maluisset. Ex duo inani urbanitas, has tation consequuntur ne, ad nostro bonorum graecis mea. Libris labitur ei est.
+    </string>
+    <string name="lorem_ipsum_short">
+        Lorem ipsum dolor sit amet, et pro everti quaeque elaboraret, sea ad numquam bonorum.
+    </string>
+    <string name="date_placeholder">mm/dd HH:mm</string>
+    <string name="email_placeholder">email@example.com</string>
 </resources>

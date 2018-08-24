@@ -4,12 +4,14 @@ import boneo.com.proyectoboneoapp.clients.getBoneoService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.Serializable
+import java.util.*
 
-data class Emisor(val username: String, val nombre: String)
-data class Comunicado(val asunto: String, val mensaje: String, val fecha: String,
-                      val emisor: Emisor)
+data class Emisor(val username: String, val nombre: String) : Serializable
+data class Comunicado(val asunto: String, val mensaje: String, val fecha: Date,
+                      val emisor: Emisor) : Serializable
 data class DestinatarioComunicado(val comunicado: Comunicado,
-                                  val fecha_leido: String, val id: Long)
+                                  val fecha_leido: Date, val id: Long) : Serializable
 
 
 object ComunicadosRepository {

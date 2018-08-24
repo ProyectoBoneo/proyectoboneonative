@@ -16,7 +16,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import java.io.IOException
 import okhttp3.OkHttpClient
-
+import com.google.gson.GsonBuilder
 
 
 interface IBoneoService {
@@ -26,7 +26,7 @@ interface IBoneoService {
     @GET("comunicados/")
     fun getComunicados(): Call<List<DestinatarioComunicado>>
 
-    @GET("/")
+    @GET("perfil_academico/")
     fun getPerfilAcademico(): Call<List<PerfilAcademico>>
 }
 
@@ -43,9 +43,12 @@ class AuthHeaderInterceptor : Interceptor {
 }
 
 fun getBoneoService() : IBoneoService {
+    val gson = GsonBuilder()
+            .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+            .create()
     val retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .client(OkHttpClient.Builder().addNetworkInterceptor(AuthHeaderInterceptor()).build())
         .build()
     return retrofit.create(IBoneoService::class.java)

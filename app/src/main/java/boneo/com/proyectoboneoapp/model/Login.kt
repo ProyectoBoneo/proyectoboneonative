@@ -1,4 +1,6 @@
 package boneo.com.proyectoboneoapp.model
 
-data class LoginRequest(var username: String, var password: String)
-data class LoginResponse(val token: String)
+import java.io.Serializable
+
+data class LoginRequest(var username: String, var password: String) : Serializable
+data class LoginResponse(val token: String) : Serializable

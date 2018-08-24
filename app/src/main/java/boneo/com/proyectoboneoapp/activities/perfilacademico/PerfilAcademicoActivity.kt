@@ -8,7 +8,7 @@ class PerfilAcademicoActivity : BaseNavigationActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_comunicados)
+        setContentView(R.layout.activity_perfil_academico)
         supportActionBar?.title = "Perfil Académico"
     }
 

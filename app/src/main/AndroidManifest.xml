@@ -43,6 +43,10 @@
         <activity
             android:name=".activities.base.BaseNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.base.BaseGoBackActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.comunicados.ComunicadosDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

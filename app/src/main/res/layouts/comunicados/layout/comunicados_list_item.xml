@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@+id/two_line_item"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/two_line_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?selectableItemBackground"
@@ -26,7 +27,7 @@
         android:layout_alignWithParentIfMissing="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
         android:layout_toEndOf="@+id/primary_action"
         android:layout_toRightOf="@+id/primary_action"
         android:orientation="horizontal"
@@ -59,13 +60,14 @@
                 android:singleLine="true"
                 tools:text="Second Line" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/comunicado_fecha"
-            style="@style/TextAppearance.AppCompat.Body2"
+            style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:singleLine="true"
             tools:text="Date" />
     </RelativeLayout>

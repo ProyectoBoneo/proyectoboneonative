@@ -14,8 +14,13 @@ import boneo.com.proyectoboneoapp.viewmodels.ComunicadosViewModel
 import boneo.com.proyectoboneoapp.views.RecyclerViewOnItemClickListener
 import kotlinx.android.synthetic.main.activity_comunicados.*
 
+
 class ComunicadosActivity : BaseNavigationActivity() {
-    val COMUNICADO = "comunicado"
+
+    companion object {
+        const val detailKey = "comunicado"
+    }
+
     private val comunicadosViewModel: ComunicadosViewModel
         get() = ViewModelProviders.of(this).get(ComunicadosViewModel::class.java)
 
@@ -29,7 +34,7 @@ class ComunicadosActivity : BaseNavigationActivity() {
             override fun onItemClick(view: View, item: DestinatarioComunicado) {
                 val intent = Intent(this@ComunicadosActivity,
                         ComunicadosDetailActivity::class.java)
-                intent.putExtra(COMUNICADO, item)
+                intent.putExtra(detailKey, item)
                 startActivity(intent)
             }
         }

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">ProyectoBoneoApp</string>
+    <string name="app_name">Proyecto Boneo</string>
+    <string name="default_notification_channel_id">default_notification_channel</string>
+
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -13,8 +15,8 @@
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Proyecto Boneo</string>
+    <string name="nav_header_subtitle">email@example.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_logout">LogoutActivity</string>
@@ -27,6 +29,8 @@
     <string name="comunicados">Comunicados</string>
     <string name="mi_cuenta">Mi Cuenta</string>
     <string name="configuracion">Configuración</string>
+    <string name="eventos">Eventos</string>
+    <string name="horarios">Horarios</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, et pro everti quaeque elaboraret, sea ad numquam bonorum. No nulla appetere nam, mei nonumy feugiat pericula et. Ex probo docendi electram pri. Usu fugit veniam ut, duo saperet inciderint in. Mea ad viris accumsan accommodare.

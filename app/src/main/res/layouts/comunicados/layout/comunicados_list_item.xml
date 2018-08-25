@@ -1,74 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/two_line_item"
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/comunicados_item_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="?selectableItemBackground"
-    android:minHeight="72dp"
-    android:paddingEnd="?listPreferredItemPaddingRight"
-    android:paddingLeft="?listPreferredItemPaddingLeft"
-    android:paddingRight="?listPreferredItemPaddingRight"
-    android:paddingStart="?listPreferredItemPaddingLeft"
+    android:layout_height="72dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/primary_action"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="centerInside"
+        android:id="@+id/comunicados_list_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="Message"
+        android:tint="@color/colorActivityIcon"
         android:src="@drawable/ic_email_black_24dp"
-        android:contentDescription="Message" />
-    <RelativeLayout
-        android:id="@+id/main_lines_container"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/comunicados_item_lines_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignWithParentIfMissing="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/primary_action"
-        android:layout_toRightOf="@+id/primary_action"
-        android:orientation="horizontal"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp">
-        <LinearLayout
-            android:id="@+id/lines_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_toLeftOf="@id/comunicado_fecha"
-            android:layout_toStartOf="@id/comunicado_fecha"
-            >
-
-            <TextView
-                android:id="@+id/comunicado_asunto"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                tools:text="First Line" />
-
-            <TextView
-                android:id="@+id/comunicado_emisor"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                tools:text="Second Line" />
-        </LinearLayout>
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/comunicados_list_image">
 
         <TextView
-            android:id="@+id/comunicado_fecha"
-            style="@style/TextAppearance.AppCompat.Small"
+            android:id="@+id/comunicado_asunto"
+            style="@style/TextAppearance.AppCompat.Body2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:singleLine="true"
-            tools:text="Date" />
-    </RelativeLayout>
-</RelativeLayout>
+            tools:text="First Line" />
+
+        <TextView
+            android:id="@+id/comunicado_emisor"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            tools:text="Second Line" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/comunicado_fecha"
+        style="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintLeft_toRightOf="@id/comunicados_item_lines_container"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:singleLine="true"
+        tools:text="Date" />
+</android.support.constraint.ConstraintLayout>

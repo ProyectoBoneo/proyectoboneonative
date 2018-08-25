@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="boneo.com.proyectoboneoapp">
+    package="com.boneo.proyectoboneoapp">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -32,22 +32,29 @@
             android:name=".activities.perfilacademico.PerfilAcademicoActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
-            android:name=".activities.home.HomeActivity"
-            android:theme="@style/AppTheme.NavigationChild" />
-        <activity
             android:name=".activities.auth.LogoutActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
             android:name=".activities.noticias.NoticiasActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
+            android:name=".activities.horarios.HorariosActivity"
+            android:theme="@style/AppTheme.NavigationChild" />
+        <activity
             android:name=".activities.base.BaseNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.base.BaseGoBackActivity"
+        <activity
+            android:name=".activities.base.BaseGoBackActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.comunicados.ComunicadosDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".activities.comunicados.ComunicadosDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <service android:name=".services.BoneoFireBaseService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

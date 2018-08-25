@@ -1,4 +1,4 @@
-package boneo.com.proyectoboneoapp
+package com.boneo.proyectoboneoapp
 
 import org.junit.Test
 

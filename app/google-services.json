@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "412082781285",
+    "firebase_url": "https://proyectoboneoapp.firebaseio.com",
+    "project_id": "proyectoboneoapp",
+    "storage_bucket": "proyectoboneoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412082781285:android:230d1b92da71d3d1",
+        "android_client_info": {
+          "package_name": "com.boneo.proyectoboneoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412082781285-0hhc6lficropklutl1kc7ra2tp9uasqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD_rZ4auI8MZjj8HHONcPYHfpIKQxdCXg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

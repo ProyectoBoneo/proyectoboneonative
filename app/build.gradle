@@ -7,7 +7,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "boneo.com.proyectoboneoapp"
+        applicationId "com.boneo.proyectoboneoapp"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
@@ -35,7 +35,7 @@ android {
                     [
                             'src/main/res/layouts/auth',
                             'src/main/res/layouts/comunicados',
-                            'src/main/res/layouts/home',
+                            'src/main/res/layouts/horarios',
                             'src/main/res/layouts/navigation',
                             'src/main/res/layouts/noticias',
                             'src/main/res/layouts/perfilacademico',
@@ -60,8 +60,13 @@ dependencies {
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-messaging:17.3.0'
+    implementation 'com.firebase:firebase-jobdispatcher:0.5.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     kapt 'android.arch.lifecycle:compiler:1.1.1'
     kapt 'com.android.databinding:compiler:3.1.4'
 }
+
+apply plugin: 'com.google.gms.google-services'

@@ -3,15 +3,18 @@ package com.boneo.proyectoboneoapp.activities.auth
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.support.v7.app.AppCompatActivity
-import android.content.Context
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.text.TextUtils
 import android.view.View
 import com.boneo.proyectoboneoapp.R
 import com.boneo.proyectoboneoapp.activities.noticias.NoticiasActivity
+import com.boneo.proyectoboneoapp.clients.getBoneoClient
 import com.boneo.proyectoboneoapp.model.Auth
+import com.boneo.proyectoboneoapp.model.FireBaseTokenRepository
+import com.boneo.proyectoboneoapp.model.LoginRepository
+import com.boneo.proyectoboneoapp.model.LoginRequest
 
 
 import kotlinx.android.synthetic.main.activity_login.*
@@ -20,11 +23,6 @@ import kotlinx.android.synthetic.main.activity_login.*
  * A login screen that offers login via email/password.
  */
 class LoginActivity : AppCompatActivity() {
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
-    private var mAuthTask: UserLoginTask? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -37,10 +35,6 @@ class LoginActivity : AppCompatActivity() {
      * errors are presented and no actual login attempt is made.
      */
     private fun attemptLogin() {
-        if (mAuthTask != null) {
-            return
-        }
-
         // Reset errors.
         email.error = null
         password.error = null
@@ -74,8 +68,26 @@ class LoginActivity : AppCompatActivity() {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true)
-            mAuthTask = UserLoginTask(this)
-            mAuthTask!!.execute(emailStr, passwordStr)
+            LoginRepository().getToken(LoginRequest(emailStr, passwordStr)) {
+                loginResponse, error ->
+                    if (error != null) {
+                        showProgress(false)
+                        Snackbar.make(email_sign_in_button,
+                                "Invalid credentials", Snackbar.LENGTH_LONG).show()
+                        email.requestFocus()
+                    } else {
+                        Auth.storeAuthToken(this, loginResponse!!.token)
+                        FireBaseTokenRepository.getFireBaseToken {
+                            fireBaseToken, _ -> FireBaseTokenRepository
+                                .createFireBaseToken(fireBaseToken!!.token) {
+                                    _, _ ->
+                                        showProgress(false)
+                                        startActivity(Intent(this.applicationContext, NoticiasActivity::class.java))
+                                        finish()
+                                }
+                        }
+                    }
+            }
         }
     }
 
@@ -104,32 +116,5 @@ class LoginActivity : AppCompatActivity() {
                         login_progress.visibility = if (show) View.VISIBLE else View.GONE
                     }
                 })
-    }
-
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
-    inner class UserLoginTask internal constructor(private val mContext: Context) : AsyncTask<String, Void, Boolean>() {
-
-        override fun doInBackground(vararg params: String): Boolean? {
-            return Auth.retrieveAuthTokenFromService(mContext, params[0], params[1])
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            mAuthTask = null
-            showProgress(false)
-            if (success!!) {
-                startActivity(Intent(mContext.applicationContext, NoticiasActivity::class.java))
-                finish()
-            } else {
-                password.requestFocus()
-            }
-        }
-
-        override fun onCancelled() {
-            mAuthTask = null
-            showProgress(false)
-        }
     }
 }

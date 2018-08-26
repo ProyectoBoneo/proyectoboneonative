@@ -21,7 +21,7 @@ interface IBoneoClient {
 
     @POST("firebase_token/")
     fun createFireBaseToken(@Body fireBaseTokenCreateRequest:
-                            FireBaseTokenCreateRequest): Call<FireBaseTokenCreateResponse>
+                            FireBaseToken): Call<FireBaseTokenCreateResponse>
 
     @GET("comunicados/")
     fun getComunicados(): Call<List<DestinatarioComunicado>>

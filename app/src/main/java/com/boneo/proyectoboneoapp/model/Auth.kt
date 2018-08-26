@@ -14,7 +14,7 @@ object Auth {
                 BuildConfig.APPLICATION_ID, Context.MODE_PRIVATE)
     }
 
-    private fun storeAuthToken(context: Context, token: String) {
+    fun storeAuthToken(context: Context, token: String) {
         val sharedPreferences = getSharedPreferences(context)
         with(sharedPreferences.edit()) {
             putString(context.getString(R.string.token_storage_key), token)
@@ -26,15 +26,6 @@ object Auth {
     fun retrieveAuthTokenFromStorage(context: Context) {
         token = getSharedPreferences(context).getString(
                 context.getString(R.string.token_storage_key), null)
-    }
-
-    fun retrieveAuthTokenFromService(context: Context, username: String, password: String) : Boolean {
-        val response = getBoneoClient().getToken(LoginRequest(username, password)).execute()
-        if (response.isSuccessful) {
-            storeAuthToken(context, response?.body()?.token!!)
-            return true
-        }
-        return false
     }
 
     fun removeAuthToken(context: Context) {

@@ -50,7 +50,7 @@
             android:name=".activities.comunicados.ComunicadosDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <service android:name=".services.BoneoFireBaseService">
+        <service android:name=".services.BoneoFireBaseService" android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

@@ -39,6 +39,7 @@ android {
                             'src/main/res/layouts/navigation',
                             'src/main/res/layouts/noticias',
                             'src/main/res/layouts/perfilacademico',
+                            'src/main/res/layouts/utils',
                             'src/main/res/layouts',
                             'src/main/res'
                     ]

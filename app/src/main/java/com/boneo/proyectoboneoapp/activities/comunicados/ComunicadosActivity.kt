@@ -13,6 +13,7 @@ import com.boneo.proyectoboneoapp.model.DestinatarioComunicado
 import com.boneo.proyectoboneoapp.viewmodels.ComunicadosViewModel
 import com.boneo.proyectoboneoapp.views.RecyclerViewOnItemClickListener
 import kotlinx.android.synthetic.main.activity_comunicados.*
+import kotlinx.android.synthetic.main.loader.*
 
 
 class ComunicadosActivity : BaseNavigationActivity() {
@@ -43,7 +44,7 @@ class ComunicadosActivity : BaseNavigationActivity() {
                     items ->
                         adapter.items = items?.first!!
                         adapter.notifyDataSetChanged()
-                        comunicados_loading.visibility = View.GONE
+                        data_loading.visibility = View.GONE
                 }
         )
     }

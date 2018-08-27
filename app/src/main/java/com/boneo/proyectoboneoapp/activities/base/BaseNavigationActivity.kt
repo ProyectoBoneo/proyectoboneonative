@@ -20,6 +20,7 @@ import com.boneo.proyectoboneoapp.activities.comunicados.ComunicadosActivity
 import com.boneo.proyectoboneoapp.activities.horarios.HorariosActivity
 import com.boneo.proyectoboneoapp.model.User
 import com.boneo.proyectoboneoapp.viewmodels.ComunicadosViewModel
+import com.boneo.proyectoboneoapp.viewmodels.PerfilAcademicoViewModel
 import com.boneo.proyectoboneoapp.viewmodels.UserViewModel
 
 import kotlinx.android.synthetic.main.activity_navigation.*
@@ -35,6 +36,9 @@ open class BaseNavigationActivity : AppCompatActivity(),
 
     val comunicadosViewModel: ComunicadosViewModel
         get() = ViewModelProviders.of(this).get(ComunicadosViewModel::class.java)
+
+    val perfilAcademicoViewModel: PerfilAcademicoViewModel
+        get() = ViewModelProviders.of(this).get(PerfilAcademicoViewModel::class.java)
 
     private var nextIntent : Intent? = null
 

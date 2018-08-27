@@ -36,6 +36,9 @@ interface IBoneoClient {
     @GET("perfil_academico/")
     fun getPerfilAcademico(): Call<List<PerfilAcademico>>
 
+    @POST("perfil_academico/{id}/mark_as_notified/")
+    fun markPerfilAcademicoAsNotified(@Path("id") id: Long): Call<PerfilAcademico>
+
     @GET("horarios/")
     fun getHorarios(): Call<List<Horario>>
 

@@ -13,6 +13,7 @@ import retrofit2.http.POST
 import java.io.IOException
 import okhttp3.OkHttpClient
 import com.google.gson.GsonBuilder
+import retrofit2.http.Path
 
 
 interface IBoneoClient {
@@ -25,6 +26,12 @@ interface IBoneoClient {
 
     @GET("comunicados/")
     fun getComunicados(): Call<List<DestinatarioComunicado>>
+
+    @GET("comunicados/{id}/")
+    fun getComunicado(@Path("id") id: Long): Call<DestinatarioComunicado>
+
+    @POST("comunicados/{id}/mark_as_read/")
+    fun markComunicadoAsRead(@Path("id") id: Long): Call<DestinatarioComunicado>
 
     @GET("perfil_academico/")
     fun getPerfilAcademico(): Call<List<PerfilAcademico>>

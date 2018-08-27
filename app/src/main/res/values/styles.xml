@@ -38,4 +38,15 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+    <style name="TextAppearance.AppCompat.Body1.highlight" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor" >@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Body2.highlight" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textColor" >@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Small.highlight" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor" >@color/colorPrimary</item>
+    </style>
 </resources>

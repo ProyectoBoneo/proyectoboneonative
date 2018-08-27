@@ -9,6 +9,7 @@ import android.view.View
 import com.boneo.proyectoboneoapp.activities.base.BaseNavigationActivity
 import com.boneo.proyectoboneoapp.R
 import com.boneo.proyectoboneoapp.activities.noticias.NoticiasActivity
+import com.boneo.proyectoboneoapp.model.ComunicadosRepository
 import com.boneo.proyectoboneoapp.model.DestinatarioComunicado
 import com.boneo.proyectoboneoapp.viewmodels.ComunicadosViewModel
 import com.boneo.proyectoboneoapp.views.RecyclerViewOnItemClickListener
@@ -30,10 +31,7 @@ class ComunicadosActivity : BaseNavigationActivity() {
 
         adapter.clickListener = object: RecyclerViewOnItemClickListener<DestinatarioComunicado> {
             override fun onItemClick(view: View, item: DestinatarioComunicado) {
-                val intent = Intent(this@ComunicadosActivity,
-                        ComunicadosDetailActivity::class.java)
-                intent.putExtra(detailKey, item)
-                startActivity(intent)
+                startComunicadosDetailActivity(item)
             }
         }
 
@@ -47,5 +45,23 @@ class ComunicadosActivity : BaseNavigationActivity() {
                         data_loading.visibility = View.GONE
                 }
         )
+
+        val notificationComunicado = intent.extras.get(detailKey) as DestinatarioComunicado?
+        if (notificationComunicado != null) {
+            startComunicadosDetailActivity(notificationComunicado)
+        }
+    }
+
+    /**
+     * Start the comunicados detail activity and mark the comunicado as read if needed
+     */
+    fun startComunicadosDetailActivity(destinatarioComunicado: DestinatarioComunicado) {
+        if (!destinatarioComunicado.leido) {
+            comunicadosViewModel.markComunicadoAsRead(destinatarioComunicado.id)
+        }
+        val intent = Intent(this,
+                ComunicadosDetailActivity::class.java)
+        intent.putExtra(detailKey, destinatarioComunicado)
+        startActivity(intent)
     }
 }

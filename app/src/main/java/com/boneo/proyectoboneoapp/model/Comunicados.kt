@@ -38,4 +38,26 @@ object ComunicadosRepository {
             }
         })
     }
+
+    fun getComunicado(id: Long, completion: (DestinatarioComunicado?, Error?) -> Unit) {
+        getBoneoClient().getComunicado(id).enqueue(object: Callback<DestinatarioComunicado> {
+            override fun onResponse(call: Call<DestinatarioComunicado>?, response: Response<DestinatarioComunicado>?) {
+                completion(response?.body(), null)
+            }
+            override fun onFailure(call: Call<DestinatarioComunicado>?, t: Throwable?) {
+                completion(null, Error(t?.message))
+            }
+        })
+    }
+
+    fun markComunicadoAsRead(id: Long, completion: (DestinatarioComunicado?, Error?) -> Unit) {
+        getBoneoClient().markComunicadoAsRead(id).enqueue(object: Callback<DestinatarioComunicado> {
+            override fun onResponse(call: Call<DestinatarioComunicado>?, response: Response<DestinatarioComunicado>?) {
+                completion(response?.body(), null)
+            }
+            override fun onFailure(call: Call<DestinatarioComunicado>?, t: Throwable?) {
+                completion(null, Error(t?.message))
+            }
+        })
+    }
 }

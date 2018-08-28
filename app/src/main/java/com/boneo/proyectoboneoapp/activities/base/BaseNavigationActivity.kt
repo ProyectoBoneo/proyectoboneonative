@@ -67,7 +67,7 @@ open class BaseNavigationActivity : AppCompatActivity(),
         userViewModel.user.observe(this,
             Observer<Pair<User?, Error?>> {
                 user ->
-                    user_email_subtitle.text = user?.first?.username
+                    user_email_subtitle?.text = user?.first?.username
             })
     }
 

@@ -7,7 +7,6 @@
     tools:context=".activities.perfilacademico.PerfilAcademicoActivity">
 
     <include layout="@layout/loader" />
-
     <android.support.v7.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/perfil_academico_recycler_view"

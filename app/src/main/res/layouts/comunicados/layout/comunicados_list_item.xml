@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/comunicados_list_image"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         android:contentDescription="Message"
         android:tint="@color/colorActivityIcon"
         android:src="@drawable/ic_email_black_24dp"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/comunicado_asunto"
-            style="@style/TextAppearance.AppCompat.Body1"
+            style="@style/textListItemTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -36,7 +36,7 @@
 
         <TextView
             android:id="@+id/comunicado_emisor"
-            style="@style/TextAppearance.AppCompat.Body1"
+            style="@style/textBody"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -45,7 +45,7 @@
 
     <TextView
         android:id="@+id/comunicado_fecha"
-        style="@style/TextAppearance.AppCompat.Small"
+        style="@style/textBody"
         app:layout_constraintLeft_toRightOf="@id/comunicados_item_lines_container"
         android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"

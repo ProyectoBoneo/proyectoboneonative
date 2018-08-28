@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/horario_materia"
-        style="@style/TextAppearance.AppCompat.Body2"
+        style="@style/textListItemTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/horario_hora_inicio"
-        style="@style/TextAppearance.AppCompat.Small"
+        style="@style/textBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:singleLine="true"
@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/horario_hypen"
-        style="@style/TextAppearance.AppCompat.Small"
+        style="@style/textBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
@@ -47,7 +47,7 @@
 
     <TextView
         android:id="@+id/horario_hora_fin"
-        style="@style/TextAppearance.AppCompat.Small"
+        style="@style/textBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"

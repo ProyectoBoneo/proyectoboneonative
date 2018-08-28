@@ -27,8 +27,9 @@ class PerfilAcademicoRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.Vie
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = items[position]
         holder.itemView.perfil_academico_materia.text = item.nombre_materia
-        holder.itemView.perfil_academico_materia_promedio.text = item.promedio.toString()
-        if (clickListener != null) {
+        holder.itemView.perfil_academico_materia_promedio.text = if (item.promedio > 0) item.promedio.toString() else "-"
+        holder.itemView.setOnClickListener(null)
+        if (clickListener != null && item.evaluaciones.isNotEmpty()) {
             holder.itemView.setOnClickListener { view -> clickListener!!.onItemClick(view, item) }
         }
     }

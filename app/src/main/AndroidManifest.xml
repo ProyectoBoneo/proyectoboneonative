@@ -49,6 +49,9 @@
         <activity
             android:name=".activities.comunicados.ComunicadosDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.perfilacademico.PerfilAcademicoDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <service android:name=".services.BoneoFireBaseService" android:exported="false">
             <intent-filter>

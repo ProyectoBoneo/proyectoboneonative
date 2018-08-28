@@ -34,10 +34,13 @@ interface IBoneoClient {
     fun markComunicadoAsRead(@Path("id") id: Long): Call<DestinatarioComunicado>
 
     @GET("perfil_academico/")
-    fun getPerfilAcademico(): Call<List<PerfilAcademico>>
+    fun getPerfilesAcademicos(): Call<List<PerfilAcademico>>
 
-    @POST("perfil_academico/{id}/mark_as_notified/")
-    fun markPerfilAcademicoAsNotified(@Path("id") id: Long): Call<PerfilAcademico>
+    @GET("perfil_academico/{id}/")
+    fun getPerfilAcademico(@Path("id") id: Long): Call<PerfilAcademico>
+
+    @POST("resultados_evaluaciones/{id}/mark_as_notified/")
+    fun markResultadoEvaluacionAsNotified(@Path("id") id: Long): Call<ResultadoEvaluacion>
 
     @GET("horarios/")
     fun getHorarios(): Call<List<Horario>>

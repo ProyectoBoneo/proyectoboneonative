@@ -10,7 +10,7 @@
             android:title="@string/noticias" />
         <item
             android:id="@+id/nav_perfil_academico"
-            android:icon="@drawable/ic_timeline_black_24dp"
+            android:icon="@drawable/ic_insert_chart_black_24dp"
             android:title="@string/perfil_academico" />
         <item
             android:id="@+id/nav_comunicados"

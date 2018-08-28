@@ -14,7 +14,7 @@ class PerfilAcademicoViewModel : ViewModel() {
     }
 
     private fun retrievePerfilAcademico() {
-        PerfilAcademicoRepository.getPerfilAcademico{ perfilAcademicoResult, error ->
+        PerfilAcademicoRepository.getPerfilesAcademicos{ perfilAcademicoResult, error ->
             perfilAcademico.value = Pair(perfilAcademicoResult, error)
         }
     }

@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/comunicados_item_layout"
+    android:id="@+id/perfil_academico_detail_list_item_layout"
     android:layout_width="match_parent"
     android:layout_height="54dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/perfil_academico_list_image"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:contentDescription="Message"
-        android:tint="@color/colorActivityIcon"
-        android:src="@drawable/ic_insert_chart_black_24dp"
-        android:padding="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/perfil_academico_materia"
-        style="@style/textListItemTitle"
+    <LinearLayout
+        android:id="@+id/perfil_academico_item_lines_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/perfil_academico_list_image"
-        android:singleLine="true"
-        tools:text="Materia" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp">
+        <TextView
+            android:id="@+id/perfil_academico_examen"
+            style="@style/textListItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            tools:text="Nombre Examen / Clase" />
+
+        <TextView
+            android:id="@+id/perfil_academico_fecha_examen"
+            style="@style/textBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            tools:text="dd/mm:HH:MM" />
+    </LinearLayout>
 
     <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="32dp"
@@ -38,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/text_circular_background">
         <TextView
-            android:id="@+id/perfil_academico_materia_promedio"
+            android:id="@+id/perfil_academico_examen_nota"
             style="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

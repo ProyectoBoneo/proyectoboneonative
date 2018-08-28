@@ -8,19 +8,19 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
 import android.support.v4.app.NotificationCompat
-import android.util.Log
 import com.boneo.proyectoboneoapp.R
 
-import com.boneo.proyectoboneoapp.activities.base.MainActivity
 import com.boneo.proyectoboneoapp.activities.comunicados.ComunicadosActivity
-import com.boneo.proyectoboneoapp.activities.comunicados.ComunicadosDetailActivity
+import com.boneo.proyectoboneoapp.activities.perfilacademico.PerfilAcademicoActivity
 import com.boneo.proyectoboneoapp.model.ComunicadosRepository
 import com.boneo.proyectoboneoapp.model.FireBaseTokenRepository
+import com.boneo.proyectoboneoapp.model.PerfilAcademicoRepository
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
 
 const val NOTIFICATION_TYPE_COMUNICADO = "comunicado"
+const val NOTIFICATION_TYPE_PERFIL_ACADEMICO = "perfil_academico"
 
 
 class BoneoFireBaseService : FirebaseMessagingService() {
@@ -31,6 +31,7 @@ class BoneoFireBaseService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {
         when(remoteMessage?.data?.get("notification_type")) {
             NOTIFICATION_TYPE_COMUNICADO -> { handleNotificacionComunicado(remoteMessage) }
+            NOTIFICATION_TYPE_PERFIL_ACADEMICO -> { handleNotificacionPerfilAcademico(remoteMessage) }
             else -> {}
         }
     }
@@ -42,6 +43,19 @@ class BoneoFireBaseService : FirebaseMessagingService() {
      */
     override fun onNewToken(token: String?) {
         FireBaseTokenRepository.createFireBaseToken(token!!) { _, _ -> }
+    }
+
+    private fun handleNotificacionPerfilAcademico(remoteMessage: RemoteMessage) {
+        PerfilAcademicoRepository.getPerfilAcademico(
+                remoteMessage.data["inscripcion_alumno_id"]!!.toLong()) {
+            perfilAcademico, _ ->
+                val intent = Intent(this, PerfilAcademicoActivity::class.java)
+                intent.putExtra(PerfilAcademicoActivity.detailKey, perfilAcademico)
+                sendNotification("El resultado de tu evaluación ya está disponible",
+                        String.format("%s: %s", perfilAcademico?.nombre_materia!!,
+                                remoteMessage.data["evaluacion"]),
+                        intent)
+        }
     }
 
     private fun handleNotificacionComunicado(remoteMessage: RemoteMessage) {

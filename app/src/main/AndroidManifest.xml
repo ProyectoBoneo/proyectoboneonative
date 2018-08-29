@@ -41,6 +41,9 @@
             android:name=".activities.horarios.HorariosActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
+            android:name=".activities.eventos.EventosActivity"
+            android:theme="@style/AppTheme.NavigationChild" />
+        <activity
             android:name=".activities.base.BaseNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -51,6 +54,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.perfilacademico.PerfilAcademicoDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.noticias.NoticiasDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <service android:name=".services.BoneoFireBaseService" android:exported="false">

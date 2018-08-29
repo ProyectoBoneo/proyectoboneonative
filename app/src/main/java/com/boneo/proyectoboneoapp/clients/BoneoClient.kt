@@ -47,6 +47,9 @@ interface IBoneoClient {
 
     @GET("usuario/")
     fun getUser(): Call<User>
+
+    @GET("noticias/")
+    fun getNoticias(): Call<List<Noticia>>
 }
 
 class AuthHeaderInterceptor : Interceptor {

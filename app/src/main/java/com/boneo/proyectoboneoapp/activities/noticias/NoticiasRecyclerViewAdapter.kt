@@ -27,9 +27,11 @@ class NoticiasRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val listItem = items[position]
         holder.itemView.noticias_title.text = listItem.title
-        holder.itemView.noticias_description.text = listItem.description
+        holder.itemView.noticias_description.text = listItem.content
         if (listItem.images.isNotEmpty()) {
-            Picasso.get().load(listItem.images[0]).into(holder.itemView.noticias_image)
+            Picasso.get().load(listItem.images[0])
+                    .placeholder(R.drawable.image_placeholder)
+                    .into(holder.itemView.noticias_image)
         }
         if (clickListener != null) {
             holder.itemView.setOnClickListener { view -> clickListener?.onItemClick(view,

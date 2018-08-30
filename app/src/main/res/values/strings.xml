@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Proyecto Boneo</string>
+    <string name="app_name">Colegio Boneo</string>
     <string name="default_notification_channel_id">default_notification_channel</string>
 
     <string name="title_activity_login">Sign in</string>
@@ -12,14 +12,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_navigation">NavigationActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Proyecto Boneo</string>
     <string name="nav_header_subtitle">email@example.com</string>
-    <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_logout">LogoutActivity</string>
     <string name="token_storage_key">AUTH_TOKEN</string>
 
     <string name="logout_confirm_text">¿Desea cerrar sesión?</string>

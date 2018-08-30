@@ -34,12 +34,12 @@ class ComunicadosRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHol
 
         if (item.leido) {
             holder.itemView.comunicado_fecha.setTextAppearance(holder.itemView.context,
-                    R.style.TextAppearance_AppCompat_Small)
+                    R.style.textListSecondary)
             holder.itemView.comunicado_fecha.typeface = Typeface.DEFAULT
             holder.itemView.comunicado_asunto.typeface = Typeface.DEFAULT
         } else {
             holder.itemView.comunicado_fecha.setTextAppearance(holder.itemView.context,
-                    R.style.TextAppearance_AppCompat_Small_highlight)
+                    R.style.textListSecondary_highlight)
             holder.itemView.comunicado_fecha.typeface = Typeface.DEFAULT_BOLD
             holder.itemView.comunicado_asunto.typeface = Typeface.DEFAULT_BOLD
         }

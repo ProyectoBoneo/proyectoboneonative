@@ -3,6 +3,11 @@
     <color name="colorPrimary">#7B1FA2</color>
     <color name="colorPrimaryDark">#6A1B9A</color>
     <color name="colorAccent">#AA00FF</color>
+    <color name="colorPrimaryLight">#ce93d8</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#757575</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="textAndIcons">#FFFFFF</color>
     <color name="colorActivityIcon">#727272</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorBlack">#000</color>

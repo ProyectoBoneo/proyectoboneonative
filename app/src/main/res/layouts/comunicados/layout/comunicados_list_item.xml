@@ -36,7 +36,7 @@
 
         <TextView
             android:id="@+id/comunicado_emisor"
-            style="@style/textBody"
+            style="@style/textListSecondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"

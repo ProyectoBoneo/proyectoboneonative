@@ -22,9 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/comunicados_list_image">
+        app:layout_constraintLeft_toRightOf="@id/comunicados_list_image"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/comunicado_asunto"

@@ -3,25 +3,23 @@ package com.boneo.proyectoboneoapp.activities.base
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.boneo.proyectoboneoapp.activities.noticias.NoticiasActivity
 import com.boneo.proyectoboneoapp.activities.perfilacademico.PerfilAcademicoActivity
 import com.boneo.proyectoboneoapp.R
 import com.boneo.proyectoboneoapp.activities.auth.LogoutActivity
+import com.boneo.proyectoboneoapp.activities.clasesvirtuales.ClasesVirtualesActivity
 import com.boneo.proyectoboneoapp.activities.comunicados.ComunicadosActivity
+import com.boneo.proyectoboneoapp.activities.eventos.EventosActivity
 import com.boneo.proyectoboneoapp.activities.horarios.HorariosActivity
 import com.boneo.proyectoboneoapp.model.User
-import com.boneo.proyectoboneoapp.viewmodels.ComunicadosViewModel
-import com.boneo.proyectoboneoapp.viewmodels.PerfilAcademicoViewModel
-import com.boneo.proyectoboneoapp.viewmodels.UserViewModel
+import com.boneo.proyectoboneoapp.viewmodels.*
 
 import kotlinx.android.synthetic.main.activity_navigation.*
 import kotlinx.android.synthetic.main.app_bar_navigation.*
@@ -34,8 +32,14 @@ open class BaseNavigationActivity : AppCompatActivity(),
     val userViewModel: UserViewModel
         get() = ViewModelProviders.of(this).get(UserViewModel::class.java)
 
+    val clasesVirtualesViewModel: ClasesVirtualesViewModel
+        get() = ViewModelProviders.of(this).get(ClasesVirtualesViewModel::class.java)
+
     val comunicadosViewModel: ComunicadosViewModel
         get() = ViewModelProviders.of(this).get(ComunicadosViewModel::class.java)
+
+    val eventosViewModel: EventosViewModel
+        get() = ViewModelProviders.of(this).get(EventosViewModel::class.java)
 
     val perfilAcademicoViewModel: PerfilAcademicoViewModel
         get() = ViewModelProviders.of(this).get(PerfilAcademicoViewModel::class.java)
@@ -90,11 +94,14 @@ open class BaseNavigationActivity : AppCompatActivity(),
             R.id.nav_perfil_academico -> {
                 nextIntent = Intent(this.applicationContext, PerfilAcademicoActivity::class.java)
             }
+            R.id.nav_clases_virtuales -> {
+                nextIntent = Intent(this.applicationContext, ClasesVirtualesActivity::class.java)
+            }
+            R.id.nav_eventos -> {
+                nextIntent = Intent(this.applicationContext, EventosActivity::class.java)
+            }
             R.id.nav_horarios -> {
                 nextIntent = Intent(this.applicationContext, HorariosActivity::class.java)
-            }
-            R.id.nav_configuracion -> {
-
             }
             R.id.nav_cerrar_sesion -> {
                 nextIntent = Intent(this.applicationContext, LogoutActivity::class.java)

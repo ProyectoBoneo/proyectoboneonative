@@ -21,6 +21,8 @@ import com.google.firebase.messaging.RemoteMessage
 
 const val NOTIFICATION_TYPE_COMUNICADO = "comunicado"
 const val NOTIFICATION_TYPE_PERFIL_ACADEMICO = "perfil_academico"
+const val NOTIFICATION_TYPE_EVENTO = "evento"
+const val NOTIFICATION_TYPE_CLASE_VIRTUAL = "clase_virtual"
 
 
 class BoneoFireBaseService : FirebaseMessagingService() {

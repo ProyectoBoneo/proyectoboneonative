@@ -41,8 +41,17 @@
             android:name=".activities.horarios.HorariosActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
+            android:name=".activities.clasesvirtuales.ClasesVirtualesActivity"
+            android:theme="@style/AppTheme.NavigationChild" />
+        <activity
+            android:name=".activities.clasesvirtuales.ClasesVirtualesDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".activities.eventos.EventosActivity"
             android:theme="@style/AppTheme.NavigationChild" />
+        <activity
+            android:name=".activities.eventos.EventosDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.base.BaseNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />

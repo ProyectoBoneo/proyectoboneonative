@@ -42,6 +42,18 @@ interface IBoneoClient {
     @POST("resultados_evaluaciones/{id}/mark_as_notified/")
     fun markResultadoEvaluacionAsNotified(@Path("id") id: Long): Call<ResultadoEvaluacion>
 
+    @GET("clases_virtuales/")
+    fun getClasesVirtuales(): Call<List<ClaseVirtual>>
+
+    @GET("clases_virtuales/{id}/")
+    fun getClaseVirtual(@Path("id") id: Long): Call<ClaseVirtual>
+
+    @GET("eventos/")
+    fun getEventos(): Call<List<Evento>>
+
+    @GET("eventos/{id}/")
+    fun getEvento(@Path("id") id: Long): Call<Evento>
+
     @GET("horarios/")
     fun getHorarios(): Call<List<Horario>>
 

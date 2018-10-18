@@ -4,7 +4,12 @@ package com.boneo.proyectoboneoapp.utils
 import java.text.SimpleDateFormat
 import java.util.*
 
-val DATE_FORMAT = SimpleDateFormat("dd/MM HH:mm")
+val DATETIME_FORMAT = SimpleDateFormat("dd/MM HH:mm")
+val DATE_FORMAT = SimpleDateFormat("dd/MM")
+
+fun formatDateTime(date: Date) : String {
+    return DATETIME_FORMAT.format(date)
+}
 
 fun formatDate(date: Date) : String {
     return DATE_FORMAT.format(date)

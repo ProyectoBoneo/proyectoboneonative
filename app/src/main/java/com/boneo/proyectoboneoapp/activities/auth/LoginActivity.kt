@@ -73,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
                     if (error != null) {
                         showProgress(false)
                         Snackbar.make(email_sign_in_button,
-                                "Invalid credentials", Snackbar.LENGTH_LONG).show()
+                                "El email o la contraseña no son válidos", Snackbar.LENGTH_LONG).show()
                         email.requestFocus()
                     } else {
                         Auth.storeAuthToken(this, loginResponse!!.token)

@@ -5,7 +5,7 @@ import com.boneo.proyectoboneoapp.R
 import com.boneo.proyectoboneoapp.activities.base.BaseGoBackActivity
 import com.boneo.proyectoboneoapp.activities.comunicados.ComunicadosActivity.Companion.detailKey
 import com.boneo.proyectoboneoapp.model.DestinatarioComunicado
-import com.boneo.proyectoboneoapp.utils.formatDate
+import com.boneo.proyectoboneoapp.utils.formatDateTime
 import kotlinx.android.synthetic.main.activity_comunicados_detail.*
 
 class ComunicadosDetailActivity :  BaseGoBackActivity() {
@@ -17,7 +17,7 @@ class ComunicadosDetailActivity :  BaseGoBackActivity() {
         val destinatarioComunicado = intent.extras.get(detailKey) as DestinatarioComunicado
         comunicados_detail_asunto.text = destinatarioComunicado.comunicado.asunto
         comunicados_detail_emisor.text = destinatarioComunicado.comunicado.emisor.nombre
-        comunicados_detail_fecha.text = formatDate(destinatarioComunicado.comunicado.fecha)
+        comunicados_detail_fecha.text = formatDateTime(destinatarioComunicado.comunicado.fecha)
         comunicados_item_detail_mensaje.text = destinatarioComunicado.comunicado.mensaje
     }
 }

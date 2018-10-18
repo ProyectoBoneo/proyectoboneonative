@@ -1,53 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/comunicados_item_layout"
-    android:layout_width="match_parent"
-    android:layout_height="72dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clases_virtuales_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
-        android:id="@+id/comunicados_list_image"
+        android:id="@+id/clase_virtual_list_image"
         android:layout_width="54dp"
         android:layout_height="54dp"
-        android:contentDescription="Message"
+        android:contentDescription="Evento"
         android:tint="@color/colorActivityIcon"
-        android:src="@drawable/ic_email_black_24dp"
+        android:src="@drawable/ic_library_books_black_24dp"
         android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/comunicados_item_lines_container"
+        android:id="@+id/clase_virtual_item_lines_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/comunicados_list_image"
+        app:layout_constraintLeft_toRightOf="@id/clase_virtual_list_image"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/comunicado_asunto"
+            android:id="@+id/clase_virtual_nombre"
             style="@style/textListItemTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
             tools:text="First Line" />
-
         <TextView
-            android:id="@+id/comunicado_emisor"
+            android:id="@+id/clase_virtual_tipo_y_materia"
             style="@style/textListSecondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            tools:text="Second Line" />
+            tools:text="First Line" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/comunicado_fecha"
+        android:id="@+id/clase_virtual_fecha"
         style="@style/textBody"
-        app:layout_constraintLeft_toRightOf="@id/comunicados_item_lines_container"
+        app:layout_constraintLeft_toRightOf="@id/clase_virtual_item_lines_container"
         android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
         android:layout_width="wrap_content"
@@ -57,4 +56,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:singleLine="true"
         tools:text="Date" />
+
 </android.support.constraint.ConstraintLayout>

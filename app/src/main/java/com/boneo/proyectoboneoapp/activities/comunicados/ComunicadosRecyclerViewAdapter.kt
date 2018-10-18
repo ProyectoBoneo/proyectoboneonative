@@ -1,7 +1,6 @@
 package com.boneo.proyectoboneoapp.activities.comunicados
 
 import android.graphics.Typeface
-import android.os.Build
 import android.support.v7.widget.RecyclerView
 
 import android.view.LayoutInflater
@@ -9,7 +8,7 @@ import android.view.ViewGroup
 import com.boneo.proyectoboneoapp.R
 
 import com.boneo.proyectoboneoapp.model.DestinatarioComunicado
-import com.boneo.proyectoboneoapp.utils.formatDate
+import com.boneo.proyectoboneoapp.utils.formatDateTime
 import com.boneo.proyectoboneoapp.views.RecyclerViewOnItemClickListener
 import kotlinx.android.synthetic.main.comunicados_list_item.view.*
 
@@ -30,7 +29,7 @@ class ComunicadosRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHol
         val item = items[position]
         holder.itemView.comunicado_asunto.text = item.comunicado.asunto
         holder.itemView.comunicado_emisor.text = item.comunicado.emisor.nombre
-        holder.itemView.comunicado_fecha.text = formatDate(item.comunicado.fecha)
+        holder.itemView.comunicado_fecha.text = formatDateTime(item.comunicado.fecha)
 
         if (item.leido) {
             holder.itemView.comunicado_fecha.setTextAppearance(holder.itemView.context,

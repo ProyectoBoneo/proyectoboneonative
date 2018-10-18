@@ -29,7 +29,7 @@ object FireBaseTokenRepository {
 
     fun getFireBaseToken(completion: (FireBaseToken?, Error?) -> Unit) {
         FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener {
-            task -> completion(FireBaseToken(task.result.token), null)
+            task -> completion(FireBaseToken(task.result!!.token), null)
         }
     }
 }

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.boneo.proyectoboneoapp.R
 
 import com.boneo.proyectoboneoapp.model.ResultadoEvaluacion
-import com.boneo.proyectoboneoapp.utils.formatDate
+import com.boneo.proyectoboneoapp.utils.formatDateTime
 import kotlinx.android.synthetic.main.perfil_academico_detail_list_item.view.*
 
 
@@ -24,7 +24,7 @@ class PerfilAcademicoDetailRecyclerViewAdapter : RecyclerView.Adapter<RecyclerVi
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = items[position]
-        holder.itemView.perfil_academico_fecha_examen.text = formatDate(item.fecha_evaluacion)
+        holder.itemView.perfil_academico_fecha_examen.text = formatDateTime(item.fecha_evaluacion)
         holder.itemView.perfil_academico_examen.text = item.evaluacion
         holder.itemView.perfil_academico_examen_nota.text = item.nota.toString()
     }

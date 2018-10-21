@@ -14,6 +14,7 @@ import com.boneo.proyectoboneoapp.activities.noticias.NoticiasActivity
 import com.boneo.proyectoboneoapp.activities.perfilacademico.PerfilAcademicoActivity
 import com.boneo.proyectoboneoapp.R
 import com.boneo.proyectoboneoapp.activities.auth.LogoutActivity
+import com.boneo.proyectoboneoapp.activities.ayuda.AyudaActivity
 import com.boneo.proyectoboneoapp.activities.clasesvirtuales.ClasesVirtualesActivity
 import com.boneo.proyectoboneoapp.activities.comunicados.ComunicadosActivity
 import com.boneo.proyectoboneoapp.activities.eventos.EventosActivity
@@ -85,6 +86,9 @@ open class BaseNavigationActivity : AppCompatActivity(),
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.nav_ayuda -> {
+                nextIntent = Intent(this.applicationContext, AyudaActivity::class.java)
+            }
             R.id.nav_noticias -> {
                 nextIntent = Intent(this.applicationContext, NoticiasActivity::class.java)
             }

@@ -44,7 +44,10 @@
             android:name=".activities.clasesvirtuales.ClasesVirtualesActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
-            android:name=".activities.clasesvirtuales.ClasesVirtualesDetailActivity"
+            android:name=".activities.ayuda.AyudaActivity"
+            android:theme="@style/AppTheme.NavigationChild" />
+        <activity
+            android:name=".activities.ayuda.AyudaDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.eventos.EventosActivity"

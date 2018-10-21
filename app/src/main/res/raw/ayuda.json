@@ -1,0 +1,44 @@
+{
+  "ayuda_entries": [
+    {
+      "title": "Cuenta",
+      "description": "Todo lo relacionado con su cuenta",
+      "body": "En esta aplicación, usted podrá iniciar sesión con una cuenta de alumno para mantenerse al tanto de su estado académico y de distintos sucesos.\nPara cerrar sesión, simplemente presione 'Cerrar Sesión' en el menú principal de la aplicación y confirme.\n\nSi tiene algún inconveniente o desea alterar la información de su cuenta, por favor utilice el sitio web o comuníquese con la institución."
+    },
+    {
+      "title": "Navegación",
+      "description": "Conceptos básicos de navegación",
+      "body": "La aplicación cuenta con un menú principal de navegación al que puede ingresar presionando el ícono de menú en la parte superior izquierda de la pantalla.\n\nExisten 2 tipos de navegación en las pantallas:\n- Navegación simple: estas pantallas permiten acceder al menú de navegación presionando el botón mencionado\n- Navegación de detalle: estas pantallas de detalle permiten presionar un ícono para volver a las pantallas principales. Recuerde que también puede utilizar el botón de hardware designado por su plataforma móvil para volver."
+    },
+    {
+      "title": "Noticias",
+      "description": "Sucesos relacionados con la institución",
+      "body": "Para informarse sobre los sucesos relacionados con la institución, presione 'Noticias' en el menú principal de la aplicación. Se abrirá una pantalla con las noticias disponibles, ordenadas por fecha.\nPara ver el contenido de una noticia, simplemente presione la imagen o el título de la misma. Puede volver a la pantalla anterior con la tecla designada por su dispositivo móvil para retroceder o simplemente presionando la flecha en la esquina superior izquierda"
+    },
+    {
+      "title": "Eventos",
+      "description": "Eventos en los que participaré",
+      "body": "Para revisar los eventos en los que participará, presione 'Eventos' en el menú principal de la aplicación. Se abrirá una pantalla con los próximos eventos disponibles, ordenados por fecha.\nPara ver el contenido de un evento, simplemente presione el mismo. Puede volver a la pantalla anterior con la tecla designada por su dispositivo móvil para retroceder o simplemente presionando la flecha en la esquina superior izquierda\n\nOtra opción para mantenerse al tanto es habilitar las notificaciones instantáneas en su dispositivo móvil. Al recibir una de estas notificaciones, usted podrá presionarla para ingresar directamente a leer el detalle del nuevo evento"
+    },
+    {
+      "title": "Clases y Evaluaciones",
+      "description": "Próximas clases y evaluaciones",
+      "body": "Para revisar sus próximas clases y evaluaciones, presione 'Clases y Evaluaciones' en el menú principal de la aplicación. Se abrirá una pantalla con las próximas clases y evaluaciones, ordenadas por fecha.\nPara ver el contenido de alguna clase, simplemente presione la clase deseada. Puede volver a la pantalla anterior con la tecla designada por su dispositivo móvil para retroceder o simplemente presionando la flecha en la esquina superior izquierda\n\nOtra opción para mantenerse al tanto es habilitar las notificaciones instantáneas en su dispositivo móvil. Al recibir una de estas notificaciones, usted podrá presionarla para ingresar directamente a leer el detalle de la nueva clase"
+    },
+    {
+      "title": "Perfil Académico",
+      "description": "Evaluaciones corregidas y promedios",
+      "body": "Para revisar las evaluaciones corregidas y promedios, presione 'Perfil Académico' en el menú principal de la aplicación. Se abrirá una pantalla con las materias del cursado actual, junto con su promedio.\nPara ver el detalle de las evaluaciones, simplemente presione la materia deseada. Puede volver a la pantalla anterior con la tecla designada por su dispositivo móvil para retroceder o simplemente presionando la flecha en la esquina superior izquierda\n\nOtra opción para mantenerse al tanto es habilitar las notificaciones instantáneas en su dispositivo móvil. Al recibir una de estas notificaciones de corrección, usted podrá presionarla para ingresar directamente a revisar las evaluaciones corregidas"
+    },
+    {
+      "title": "Comunicados",
+      "description": "Cómo recibir y leer comunicados",
+      "body": "Para revisar los comunicados recibidos, presione 'Comunicados' en el menú principal de la aplicación. Se abrirá una pantalla con los comunicados recibidos, ordenados por fecha.\nPara ver el contenido de un comunicado, simplemente presione el mismo. Puede volver a la pantalla anterior con la tecla designada por su dispositivo móvil para retroceder o simplemente presionando la flecha en la esquina superior izquierda\n\nOtra opción para mantenerse al tanto es habilitar las notificaciones instantáneas en su dispositivo móvil. Al recibir una de estas notificaciones, usted podrá presionarla para ingresar directamente a leer su comunicado"
+    },
+    {
+      "title": "Horarios",
+      "description": "Consulta de horarios semanales",
+      "body": "Para consultar sus horarios, presione 'Horarios' en el menú principal de la aplicación. Se abrirá una pantalla con los horarios semanales de cada una de las materias pertenecientes a su división"
+    }
+  ]
+}

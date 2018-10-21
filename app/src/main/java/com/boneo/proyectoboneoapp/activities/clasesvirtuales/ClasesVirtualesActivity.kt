@@ -7,12 +7,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.boneo.proyectoboneoapp.R
 import com.boneo.proyectoboneoapp.activities.base.BaseNavigationActivity
-import com.boneo.proyectoboneoapp.activities.eventos.EventosActivity
 import com.boneo.proyectoboneoapp.model.ClaseVirtual
-import com.boneo.proyectoboneoapp.model.Evento
 import com.boneo.proyectoboneoapp.views.RecyclerViewOnItemClickListener
 import kotlinx.android.synthetic.main.activity_clases_virtuales.*
-import kotlinx.android.synthetic.main.activity_eventos.*
 import kotlinx.android.synthetic.main.loader.*
 
 class ClasesVirtualesActivity : BaseNavigationActivity() {
@@ -44,7 +41,8 @@ class ClasesVirtualesActivity : BaseNavigationActivity() {
                 }
         )
 
-        val notificationClaseVirtual = intent.extras.get(EventosActivity.detailKey) as ClaseVirtual?
+        val notificationClaseVirtual = intent.extras.get(
+                ClasesVirtualesActivity.detailKey) as ClaseVirtual?
         if (notificationClaseVirtual != null) {
             startClaseVirtualDetailActivity(notificationClaseVirtual)
         }

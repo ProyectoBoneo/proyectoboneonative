@@ -50,6 +50,9 @@
             android:name=".activities.ayuda.AyudaDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".activities.clasesvirtuales.ClasesVirtualesDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".activities.eventos.EventosActivity"
             android:theme="@style/AppTheme.NavigationChild" />
         <activity
